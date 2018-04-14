@@ -1,8 +1,6 @@
-﻿using CopernicusOpenCSharp.Extensions;
-using CopernicusOpenCSharp.Interfaces;
+﻿using CopernicusOpenCSharp.Interfaces;
 using CopernicusOpenCSharp.Models;
 using System;
-using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -26,6 +24,13 @@ namespace CopernicusOpenCSharp
 
         #region Interface
 
+        /// <summary>
+        /// Method to download and save the metadata into a file.
+        /// </summary>
+        /// <param name="path">Destination of downloaded file</param>
+        /// <param name="options">Resource to download</param>
+        /// <param name="id">Id of resource</param>
+        /// <returns></returns>
         public Task<bool> DownloadAllData(string path, Entites opcoes = Entites.Products, string id = null)
         {
             throw new NotImplementedException("This feature is not implemented");
@@ -57,7 +62,14 @@ namespace CopernicusOpenCSharp
             //}
             #endregion
         }
-
+       
+        /// <summary>
+        /// Method to get metadata of all resource or specific resource
+        /// </summary>
+        /// <param name="options">Enumerable of possible resources</param>
+        /// <param name="format">Enumerable of possible formats to get data</param>
+        /// <param name="id">id for get a specific product</param>
+        /// <returns></returns>
         public async Task<string> GetDataAsync(Entites opcoes = Entites.Products, Format formato = Format.json, string id = null)
         {
             try

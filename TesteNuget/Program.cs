@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using CopernicusOpenCSharp;
 using CopernicusOpenCSharp.Extensions;
-using System.Linq;
 
 namespace TesteNuget
 {
@@ -19,7 +18,7 @@ namespace TesteNuget
         public static async Task Teste()
         {
             string id = "'fea3cd38-918d-4974-8586-2578cbb07844'";
-            CopernicusService service = new CopernicusService("pedrojesus", "plenovet48");
+            CopernicusService service = new CopernicusService("", "");
             var teste = await service.GetDataAsync(id: id);
             var test2 = teste.ExtractJsonId();
             
