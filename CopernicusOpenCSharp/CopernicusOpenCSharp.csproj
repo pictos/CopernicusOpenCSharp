@@ -18,6 +18,7 @@ Save this data to a file;</PackageReleaseNotes>
 
   <ItemGroup>
     <None Remove="CopernicusOpenCSharp.0.1.0.nupkg" />
+    <None Remove="CopernicusOpenCSharp.0.1.1.nupkg" />
     <None Remove="nuget.exe" />
   </ItemGroup>
 
