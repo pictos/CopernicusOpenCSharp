@@ -11,7 +11,7 @@ namespace TesteNuget
         static void Main(string[] args)
         {
             Console.WriteLine("Liguei");
-            Task.Run(async () => await Teste());
+            Task.Run(async () => await Teste()).Wait();
             Console.WriteLine("Fim");
             Console.ReadKey();
         }

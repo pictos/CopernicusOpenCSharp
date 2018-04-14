@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
     <Authors>Pedro H S Jesus</Authors>
     <Product>CopernicusOpenCSharp</Product>
     <Description>Open Source library for access the Copernicus Satellite data.</Description>
@@ -17,6 +17,7 @@ Save this data to a file;</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="CopernicusOpenCSharp.0.1.0.nupkg" />
     <None Remove="nuget.exe" />
   </ItemGroup>
 
