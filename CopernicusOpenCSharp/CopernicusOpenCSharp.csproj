@@ -17,6 +17,10 @@ Save this data to a file;</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="nuget.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 
