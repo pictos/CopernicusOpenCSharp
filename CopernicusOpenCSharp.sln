@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopernicusOpenCSharp", "CopernicusOpenCSharp\CopernicusOpenCSharp.csproj", "{D802A641-14F2-4D7E-8AB0-8C564581E753}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CopernicusOpenCSharp", "CopernicusOpenCSharp\CopernicusOpenCSharp.csproj", "{D802A641-14F2-4D7E-8AB0-8C564581E753}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteNuget", "TesteNuget\TesteNuget.csproj", "{1313DBA8-E42A-4E04-A05A-726359901B78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D802A641-14F2-4D7E-8AB0-8C564581E753}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D802A641-14F2-4D7E-8AB0-8C564581E753}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D802A641-14F2-4D7E-8AB0-8C564581E753}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1313DBA8-E42A-4E04-A05A-726359901B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1313DBA8-E42A-4E04-A05A-726359901B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1313DBA8-E42A-4E04-A05A-726359901B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1313DBA8-E42A-4E04-A05A-726359901B78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

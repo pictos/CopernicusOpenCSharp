@@ -19,7 +19,7 @@ namespace CopernicusOpenCSharp
             user     = login;
             password = pass;
         }
-       //teste
+       
         #region Interface
 
         public async Task<bool> DownloadAllData(string path, Entites opcoes = Entites.Products,string id= null)
