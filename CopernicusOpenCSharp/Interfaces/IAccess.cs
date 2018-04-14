@@ -5,8 +5,23 @@ namespace CopernicusOpenCSharp.Interfaces
 {
     public interface IAccess
     {
-        Task<string> GetDataAsync(Entites opcoes = Entites.Products, Format formato = Format.json, string id = null);
-        Task<bool>   DownloadData(string id, string path, Entites opcoes = Entites.Products);
-        Task<bool>   DownloadAllData(string path, Entites opcoes = Entites.Products, string id = null);
+        /// <summary>
+        /// Method to get metadata of all resource or specific resource
+        /// </summary>
+        /// <param name="options">Enumerable of possible resources</param>
+        /// <param name="format">Enumerable of possible formats to get data</param>
+        /// <param name="id">id for get a specific product</param>
+        /// <returns></returns>
+        Task<string> GetDataAsync(Entites options = Entites.Products, Format format = Format.json, string id = null);
+        
+
+        /// <summary>
+        /// Method to download and save the metadata into a file.
+        /// </summary>
+        /// <param name="path">Destination of downloaded file</param>
+        /// <param name="options">Resource to download</param>
+        /// <param name="id">Id of resource</param>
+        /// <returns></returns>
+        Task<bool>   DownloadAllData(string path, Entites options = Entites.Products, string id = null);
     }
 }
