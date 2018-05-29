@@ -1,6 +1,8 @@
-﻿using CopernicusOpenCSharp.Interfaces;
+﻿using CopernicusOpenCSharp.Extensions;
+using CopernicusOpenCSharp.Interfaces;
 using CopernicusOpenCSharp.Models;
 using System;
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -9,19 +11,19 @@ namespace CopernicusOpenCSharp
 {
     public class CopernicusService : IAccess
     {
-        private readonly string user = string.Empty;
+        private readonly string user     = string.Empty;
         private readonly string password = string.Empty;
         private HttpClient Client { get; set; }
 
         public CopernicusService(string login, string pass)
         {
-            user = login;
-            password = pass;
+            user            = login;
+            password        = pass;
             var credentials = new NetworkCredential(user, password);
-            var handler = new HttpClientHandler { Credentials = credentials };
-            Client = new HttpClient(handler);
+            var handler     = new HttpClientHandler { Credentials = credentials };
+            Client          = new HttpClient(handler);
         }
-
+        
         #region Interface
 
         /// <summary>
@@ -31,9 +33,35 @@ namespace CopernicusOpenCSharp
         /// <param name="options">Resource to download</param>
         /// <param name="id">Id of resource</param>
         /// <returns></returns>
-        public Task<bool> DownloadAllData(string path, Entites opcoes = Entites.Products, string id = null)
+        public async Task<bool> DownloadData(string path, string id, Entites opcoes = Entites.Products)
         {
-            throw new NotImplementedException("This feature is not implemented");
+            if (string.IsNullOrEmpty(id))
+            {
+                throw new Exception("The Id can't be null!");
+            }
+            try
+            {
+                string json     = await GetDataAsync(id: id).ConfigureAwait(false);
+                var result      = json.ExtractJsonId();
+                string url      = result.D.Metadata.MediaSrc;
+                string fileName = $"{result.D.Name}.zip";
+
+                using (var response         = await Client.GetAsync(url,HttpCompletionOption.ResponseHeadersRead).ConfigureAwait(false))
+                using (var streamToReadFrom = await response.Content.ReadAsStreamAsync())
+                {
+                    string fileToWriteTo = Path.Combine(path, fileName);
+                    using (var streamToWriteTo = File.Open(fileToWriteTo,FileMode.Create))
+                    {
+                        await streamToReadFrom.CopyToAsync(streamToWriteTo);
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
             #region ToDo
             //try
             //{
@@ -93,7 +121,7 @@ namespace CopernicusOpenCSharp
                 Console.WriteLine(ex.Message);
                 return ex.Message;
             }
-        }
+        }      
         #endregion
     }
 }
