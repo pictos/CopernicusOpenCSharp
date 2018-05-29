@@ -17,7 +17,7 @@ namespace TesteNuget
 
         public static async Task Teste()
         {
-            CopernicusService service = new CopernicusService("", "");
+            CopernicusService service = new CopernicusService("pedrojesus", "plenovet48");
             string id  = "'fea3cd38-918d-4974-8586-2578cbb07844'";
             var teste  = await service.GetDataAsync(id: id);
             var test2  = teste.ExtractJsonId();

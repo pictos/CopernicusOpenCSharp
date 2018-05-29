@@ -2,19 +2,23 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.1.6</Version>
+    <Version>0.1.8</Version>
     <Authors>Pedro H S Jesus</Authors>
     <Product>CopernicusOpenCSharp</Product>
-    <Description>Open Source library for access the Copernicus Satellite data.</Description>
+    <Description>Open Source library for access and download the Copernicus Satellite data. 
+</Description>
     <PackageTags>Copernicus, Satellite</PackageTags>
-    <PackageReleaseNotes>First version. 
+    <PackageReleaseNotes>Beta!
 With this version you can:
-Download MetaDatas
+
+Download MetaDatas(Know issue: Don't show download progress)
 
 Access data in all suported formats(json,xml,csv);
 
 Save this data to a file;</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/pictos/CopernicusOpenCSharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/pictos/CopernicusOpenCSharp</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

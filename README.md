@@ -34,6 +34,8 @@ Task<bool> DownloadData(string path, string id = null, Entites options = Entites
 To gain access to the resources from Copernicus simply create an instance from service, like this:
 
 ```csharp
+using CopernicusOpenCSharp;
+
 CopernicusService service = new CopernicusService("userName", "password");
 ```
 
@@ -47,3 +49,41 @@ var test  = await service.GetDataAsync(id: id);
 ```
 
 If the 'id = null' the Service return all data from selected Entites.
+
+## Extention Methods
+
+```csharp
+/// <summary>
+/// Method to save MetaData in external file.
+/// </summary>
+/// <param name="data">MetaData</param>
+/// <param name="path">Destination where you save the file</param>
+/// <param name="fileMode">Specifies how  the operating system </param>
+/// <returns>True if success, False if is not</returns>
+public static bool SaveData(this string data,string path, FileMode fileMode = FileMode.Create);
+
+/// <summary>
+/// Method to return a .Net object from json string. AllData.
+/// </summary>
+/// <param name="json">MetaData returned from GetDataAsync.</param>
+/// <returns>return the .net object for all data.</returns>
+public static Query ExtractJson(this string json);
+
+/// <summary>
+/// Method to return a .Net object from json string. Specific data.
+/// </summary>
+/// <param name="json">MetaData returned from GetDataAsync</param>
+/// <returns>return the .net object for all data.</returns>
+public static QueryId ExtractJsonId(this string json);
+```
+
+With this extentions methods you can be more productive.
+
+For ex. to get a Model Class for data with ID, you can do:
+
+```csharp
+using CopernicusOpenCSharp.Extensions;
+
+var teste  = await service.GetDataAsync(id: id);
+var test2  = teste.ExtractJsonId();
+```

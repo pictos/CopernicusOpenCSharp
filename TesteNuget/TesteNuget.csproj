@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CopernicusOpenCSharp\CopernicusOpenCSharp.csproj" />
+    <PackageReference Include="CopernicusOpenCSharp" Version="0.1.7" />
   </ItemGroup>
 
 </Project>
