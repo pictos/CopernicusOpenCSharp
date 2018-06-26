@@ -21,12 +21,9 @@
 //SOFTWARE.
 
 using System;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using CopernicusOpenCSharp;
 using CopernicusOpenCSharp.Extensions;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace TesteNuget
 {

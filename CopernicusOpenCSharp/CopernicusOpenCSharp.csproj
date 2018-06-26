@@ -5,8 +5,7 @@
     <Version>0.2.0</Version>
     <Authors>Pedro H S Jesus</Authors>
     <Product>CopernicusOpenCSharp</Product>
-    <Description>Open Source library for access and download the Copernicus Satellite data. 
-</Description>
+    <Description>Open Source library for access and download the Copernicus Satellite data.</Description>
     <PackageTags>Copernicus, Satellite</PackageTags>
     <PackageReleaseNotes>Beta!
 
