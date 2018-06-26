@@ -88,34 +88,7 @@ namespace CopernicusOpenCSharp
             {
                 Console.WriteLine(ex.Message);
                 return false;
-            }
-            #region ToDo
-            //try
-            //{
-            //    string json = "";
-            //    if (id != null)
-            //        json = await GetDataAsync(id: id);
-            //    else
-            //        json = await GetDataAsync();
-
-            //    var result = json.ExtractJson();
-
-            //    foreach (var item in result.D.Results)
-            //    {
-            //        string fileName = item.Name + ".zip";
-            //        path = Path.Combine(path, fileName);
-            //        var url = item.Metadata.Media_src;
-            //    }
-            //    return true;
-
-            //}
-            //catch (Exception ex)
-            //{
-
-            //    Console.WriteLine(ex.Message);
-            //    return false;
-            //}
-            #endregion
+            }            
         }
 
 
