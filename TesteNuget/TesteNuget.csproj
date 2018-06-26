@@ -5,8 +5,12 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="CopernicusOpenCSharp" Version="0.1.7" />
+    <ProjectReference Include="..\CopernicusOpenCSharp\CopernicusOpenCSharp.csproj" />
   </ItemGroup>
 
 </Project>
