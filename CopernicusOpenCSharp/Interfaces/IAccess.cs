@@ -32,7 +32,7 @@ namespace CopernicusOpenCSharp.Interfaces
        
         Task<string> GetDataAsync(Entites options = Entites.Products, Format format = Format.json, string id = null);
         
-        Task<bool> DownloadDataAsync(string path, IProgress<double> progress, string id = null, Entites options = Entites.Products, CancellationToken token = default(CancellationToken));
+        Task<bool> DownloadMetaDataAsync(string path, IProgress<double> progress, string id = null, Entites options = Entites.Products, CancellationToken token = default(CancellationToken));
 
         [Obsolete("This method is deprecated, use the DownloadDataAsync")]
         Task<bool> DownloadData(string path, string id = null, Entites options = Entites.Products);

@@ -87,3 +87,33 @@ using CopernicusOpenCSharp.Extensions;
 var teste  = await service.GetDataAsync(id: id);
 var test2  = teste.ExtractJsonId();
 ```
+
+## Download File
+
+You can download the MetaData and expose the the percentage progress. Using the ProgressChanged event to do this.
+
+```csharp
+using CopernicusOpenCSharp;
+
+static Progress<double> MyProgress = new Progress<double>();
+static double old = 0;
+
+public static async Task Teste()
+{
+    MyProgress.ProgressChanged += (sender, value) =>
+            {
+                value = Math.Round(value, 2);
+
+                if (value != old)
+                {
+                    Console.WriteLine($"{value} %");
+                }
+
+                old = value;
+            };
+    CopernicusService service = new CopernicusService("userName", "password");
+    string id  = "'fea3cd38-918d-4974-8586-2578cbb07844'";
+
+    var download  = await service.DownloadMetaDataAsync(@"C:\Users\Teste\Desktop\", MyProgress, id: id);
+}
+```

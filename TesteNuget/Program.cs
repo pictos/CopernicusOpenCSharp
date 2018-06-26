@@ -44,7 +44,7 @@ namespace TesteNuget
 
         public static async Task Teste()
         {
-
+            
             MyProgress.ProgressChanged += (sender, value) =>
             {
                 value = Math.Round(value, 2);
@@ -63,7 +63,7 @@ namespace TesteNuget
             var test2  = teste.ExtractJsonId();
             string url = $"https://scihub.copernicus.eu/dhus/odata/v1/Products({id})/$value";
             Console.WriteLine($"\n\n\n {url}");            
-            var seila = await service.DownloadDataAsync(@"C:\Users\pedro\Desktop\Teste", MyProgress, id: id);
+            var seila  = await service.DownloadMetaDataAsync(@"C:\Users\pedro\Desktop\Teste", MyProgress, id: id);
         }
     }
 }

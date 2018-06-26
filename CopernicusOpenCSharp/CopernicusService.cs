@@ -101,7 +101,7 @@ namespace CopernicusOpenCSharp
         /// <param name="opcoes">Resource to download</param>
         /// <param name="token">Token Source to cancellation the Task</param>
         /// <returns></returns>
-        public async Task<bool> DownloadDataAsync(string path, IProgress<double> progress, string id, Entites opcoes = Entites.Products, CancellationToken token = default(CancellationToken))
+        public async Task<bool> DownloadMetaDataAsync(string path, IProgress<double> progress, string id, Entites opcoes = Entites.Products, CancellationToken token = default(CancellationToken))
         {
             if (string.IsNullOrEmpty(id))
                 throw new Exception("The Id can't be null!");
